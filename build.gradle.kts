@@ -11,3 +11,15 @@ plugins {
 task("clean") {
     delete(rootProject.buildDir)
 }
+gradle.projectsLoaded {
+    rootProject.allprojects {
+        buildscript {
+            repositories {
+                maven("https://gradle.iranrepo.ir")
+            }
+        }
+        repositories {
+            maven("https://gradle.iranrepo.ir")
+        }
+    }
+}
